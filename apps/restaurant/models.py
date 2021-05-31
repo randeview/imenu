@@ -9,6 +9,7 @@ class Organization(TimestampMixin):
     owner = models.ForeignKey(MainUser, on_delete=models.CASCADE, related_name='organizations')
     address = models.CharField('Адрес', max_length=999)
     description = models.TextField('Описания ресторана', null=True, blank=True)
+    logo = models.ImageField('Логотип', null=True, blank=True)
 
     class Meta:
         verbose_name = 'Ресторан'

@@ -6,9 +6,10 @@ from rest_framework.views import APIView
 from .serializers import OrganizationSerializer
 from rest_framework import mixins, viewsets, status
 from .models import Organization
+from ..users.permissions import OnlyOwnerAccess
 
 
-class CreateOrganizationView(GenericAPIView):
+class CreateOrganizationView(OnlyOwnerAccess, GenericAPIView):
     queryset = Organization.objects.all()
     serializer_class = OrganizationSerializer
 
