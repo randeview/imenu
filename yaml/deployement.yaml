@@ -1,0 +1,32 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: imenu-deployment
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: imenu-py-app
+  template:
+    metadata:
+      labels:
+        app: imenu-py-app
+    spec:
+      containers:
+        - name: imenu
+          image: imenu:v1
+          env:
+            - name: DB_NAME
+              value: "myapp"
+            - name: DB_USER
+              value: "myuser"
+            - name: DB_PASSWORD
+              value: "passwd"
+            - name: DB_HOST
+              value: "imenu-service.default"
+            - name: DB_PORT
+              value: "5432"
+          ports:
+            - name: web
+              containerPort: 80
+
