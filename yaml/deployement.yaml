@@ -15,15 +15,25 @@ spec:
       containers:
         - name: imenu
           image: imenu:v1
+          command: [ '/bin/bash', 'docker-entrypoint.sh' ]
           env:
             - name: DB_NAME
-              value: "myapp"
+              value: "imenu_db"
+
             - name: DB_USER
-              value: "myuser"
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-credentials
+                  key: user
+
             - name: DB_PASSWORD
-              value: "passwd"
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-credentials
+                  key: password
+
             - name: DB_HOST
-              value: "imenu-service.default"
+              value: "postgres"
             - name: DB_PORT
               value: "5432"
           ports:

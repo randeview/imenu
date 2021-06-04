@@ -1,0 +1,80 @@
+curl http://192.168.49.2:30018
+270  minikube ssh
+271  minikube get servuce
+272  kubectl get service
+273  minikube service imenu-service --url
+274  kubectl delete -f yaml/deployement.yaml -f yaml/service.yaml
+275  docker build -t imenu:v1 .
+276  docker run -p 80:8000 imenu:v1
+277  docker build -t imenu:v1 .
+278  docker run -p 80:8000 imenu:v1
+279  docker ps
+280  docker stop 152cd8d2e3f9
+281  minikube docker-en
+282  minikube docker-enb
+283  minikube docker-env
+284  export DOCKER_TLS_VERIFY="1"
+285  export DOCKER_HOST="tcp://192.168.49.2:2376"
+286  export DOCKER_CERT_PATH="/home/nurlan/.minikube/certs"
+287  export MINIKUBE_ACTIVE_DOCKERD="minikube"
+288  docker build -t imenu:v1 .
+289  docker run -p 80:8000 imenu:v1
+290  docker ps
+291  docker build -t imenu:v1 .
+292  docker run -p 80:8000 imenu:v1
+293  docker build -t imenu:v1 .
+294  docker run -p 80:8000 imenu:v1
+295  docker build -t imenu:v1 .
+296  docker run -p 80:8000 imenu:v1
+297  docker run -p 8000:8000 imenu:v1
+298  docker run -p 8000:80 imenu:v1
+299  kubectl apply -f yaml/deployement.yaml -f yaml/service.yaml
+300  kubectl get service
+301  minkube get imenu-service --url
+302  minikube get imenu-service --url
+303  minikube service imenu-service --url
+304  kubectl apply -f yaml/config.yaml
+305  docker build -t imenu:v1 .
+306  kubectl delete -f yaml/deployement.yaml -f yaml/service.yaml
+307  kubectl delete -f yaml/deployement.yaml -f yaml/service.yaml -f yaml/postgres.yaml
+308  psql -h 192.168.49.2 -p 30828 -U nurlan  -W myapp
+309  ls -l
+310  kubectl delete -f yaml/deployement.yaml
+311  kubectl apply -f yaml/deployement.yaml -f yaml/service.yaml -f yaml/postgres.yaml
+312  minikube service imenu-service --url
+313  kubectl delete -f yaml/deployement.yaml -f yaml/service.yaml -f yaml/postgres.yaml
+314  kubectl apply -f yaml/deployement.yaml -f yaml/service.yaml -f yaml/postgres.yaml
+315  minikube service imenu-service --url
+316  psql -h 192.168.49.2 -p 31633 -U nurlan -W imenudb
+317  psql -h 192.168.49.2 -p 31633 -U nurlana -W imenudb
+318  psql -h 192.168.49.2 -p 31633 -U nurlan -W imenudb
+319  kubectl delete -f yaml/deployement.yaml -f yaml/service.yaml -f yaml/postgres.yaml
+320  kubectl apply -f yaml/deployement.yaml -f yaml/service.yaml -f yaml/postgres.yaml
+321  psql -h 192.168.49.2 -p 31133 -U nurlan -W imenudb
+322  kubectl  -f yaml/postgres.yaml
+323  psql -h 192.168.49.2 -p 31133 -U nurlan -W imenudb
+324  psql -h 192.168.49.2 -p 31625 -U nurlan -W imenudb
+325  psql -h 192.168.49.2 -p 31625 -U myuser -W myapp
+326  docker build -t imenu:v1 .
+327  kubectl delete -f yaml/deployement.yaml -f yaml/service.yaml -f yaml/postgres.yaml
+328  kubectl apply -f yaml/deployement.yaml -f yaml/service.yaml -f yaml/postgres.yaml
+329  minikube service imenu-service --url
+330  psql -h 192.168.49.2 -p 32264 -U nurlan -W imenudb
+331  psql -h 192.168.49.2 -p 31625 -U myuser -W myapp
+332  psql -h 192.168.49.2 -p 32264 -U myuser -W myapp
+333  git status
+334  git add .
+335  git commit -m "Sa task 2"
+336  git status
+337  git push origin master
+338  minikube start
+601  kubectl exec --stdin --tty imenu-deployment-8647b6dd-7mswt -- /bin/bash
+602  kubectl apply -f yaml/secret.yaml -f yaml/postgres.yaml -f yaml/deployement.yaml -f yaml/service.yaml
+603  kubectl get pods
+604  kubectl exec --stdin --tty imenu-deployment-6869548f4-8ghxb   -- /bin/bash
+605  kubectl delete -f yaml/secret.yaml -f yaml/postgres.yaml -f yaml/deployement.yaml -f yaml/service.yaml
+606  kubectl apply -f yaml/secret.yaml -f yaml/postgres.yaml -f yaml/deployement.yaml -f yaml/service.yaml
+607  kubectl get pods
+608  kubectl exec --stdin --tty imenu-deployment-6869548f4-8ghxb   -- /bin/bash
+609  git status
+610  history
