@@ -25,3 +25,9 @@ class RolesListView(generics.ListAPIView):
     permission_classes = (AllowAny,)
     queryset = Role.objects.all()
     serializer_class = RoleSerializer
+
+
+class UsersListView(generics.ListAPIView):
+    permission_classes = (AllowAny,)
+    queryset = MainUser.objects.all()
+    serializer_class = MainUserSerializer

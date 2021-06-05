@@ -1,0 +1,775 @@
+{
+	"info": {
+		"_postman_id": "ad181944-44b7-4eb1-b4b3-997099e12cde",
+		"name": "Snippets API",
+		"description": "Test description\n\nContact Support:\n Email: contact@snippets.local",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "auth",
+			"item": [
+				{
+					"name": "auth token-obtain create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\": \"ut consequat sint voluptate\",\n    \"password\": \"aute ad irure\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/token-obtain/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"token-obtain",
+								""
+							]
+						},
+						"description": "Takes a set of user credentials and returns an access and refresh JSON web\ntoken pair to prove the authentication of those credentials."
+					},
+					"response": [
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "Authorization",
+										"value": "<API Key>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"email\": \"ut consequat sint voluptate\",\n    \"password\": \"aute ad irure\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/token-obtain/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"token-obtain",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"email\": \"ut consequat sint voluptate\",\n \"password\": \"aute ad irure\"\n}"
+						}
+					]
+				},
+				{
+					"name": "auth token-refresh create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"refresh\": \"amet do\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/auth/token-refresh/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"auth",
+								"token-refresh",
+								""
+							]
+						},
+						"description": "Takes a refresh type JSON web token and returns an access type JSON web\ntoken if the refresh token is valid."
+					},
+					"response": [
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"method": "POST",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "Authorization",
+										"value": "<API Key>"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"refresh\": \"amet do\"\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/auth/token-refresh/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"auth",
+										"token-refresh",
+										""
+									]
+								}
+							},
+							"status": "Created",
+							"code": 201,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"refresh\": \"amet do\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "users",
+			"item": [
+				{
+					"name": "users",
+					"item": [
+						{
+							"name": "{id}",
+							"item": [
+								{
+									"name": "users users read",
+									"request": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/users/users/:id/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												"users",
+												":id",
+												""
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "93318353",
+													"description": "(Required) A unique integer value identifying this Пользователь."
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "GET",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: apikey",
+														"key": "Authorization",
+														"value": "<API Key>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/users/users/:id/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"users",
+														"users",
+														":id",
+														""
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n \"password\": \"adipisicing nisi dolore irure\",\n \"iin\": \"sit proi\",\n \"phone\": \"minim cupidatat sed magna\",\n \"email\": \"NTgxCDU@kJdOnCUpGFIwBbFIVXhB.uat\",\n \"first_name\": \"amet sunt tempor\",\n \"last_name\": \"in sunt\",\n \"middle_name\": \"velit commodo eiusmod Ut\",\n \"role\": 1299218\n}"
+										}
+									]
+								},
+								{
+									"name": "users users update",
+									"request": {
+										"method": "PUT",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"password\": \"adipisicing nisi dolore irure\",\n    \"iin\": \"sit proi\",\n    \"phone\": \"minim cupidatat sed magna\",\n    \"email\": \"NTgxCDU@kJdOnCUpGFIwBbFIVXhB.uat\",\n    \"first_name\": \"amet sunt tempor\",\n    \"last_name\": \"in sunt\",\n    \"middle_name\": \"velit commodo eiusmod Ut\",\n    \"role\": 1299218\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/users/users/:id/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												"users",
+												":id",
+												""
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "93318353",
+													"description": "(Required) A unique integer value identifying this Пользователь."
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "PUT",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: apikey",
+														"key": "Authorization",
+														"value": "<API Key>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/users/users/:id/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"users",
+														"users",
+														":id",
+														""
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n \"password\": \"adipisicing nisi dolore irure\",\n \"iin\": \"sit proi\",\n \"phone\": \"minim cupidatat sed magna\",\n \"email\": \"NTgxCDU@kJdOnCUpGFIwBbFIVXhB.uat\",\n \"first_name\": \"amet sunt tempor\",\n \"last_name\": \"in sunt\",\n \"middle_name\": \"velit commodo eiusmod Ut\",\n \"role\": 1299218\n}"
+										}
+									]
+								},
+								{
+									"name": "users users partial update",
+									"request": {
+										"method": "PATCH",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"password\": \"adipisicing nisi dolore irure\",\n    \"iin\": \"sit proi\",\n    \"phone\": \"minim cupidatat sed magna\",\n    \"email\": \"NTgxCDU@kJdOnCUpGFIwBbFIVXhB.uat\",\n    \"first_name\": \"amet sunt tempor\",\n    \"last_name\": \"in sunt\",\n    \"middle_name\": \"velit commodo eiusmod Ut\",\n    \"role\": 1299218\n}"
+										},
+										"url": {
+											"raw": "{{baseUrl}}/users/users/:id/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												"users",
+												":id",
+												""
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "93318353",
+													"description": "(Required) A unique integer value identifying this Пользователь."
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "PATCH",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: apikey",
+														"key": "Authorization",
+														"value": "<API Key>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/users/users/:id/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"users",
+														"users",
+														":id",
+														""
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "OK",
+											"code": 200,
+											"_postman_previewlanguage": "json",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "application/json"
+												}
+											],
+											"cookie": [],
+											"body": "{\n \"password\": \"adipisicing nisi dolore irure\",\n \"iin\": \"sit proi\",\n \"phone\": \"minim cupidatat sed magna\",\n \"email\": \"NTgxCDU@kJdOnCUpGFIwBbFIVXhB.uat\",\n \"first_name\": \"amet sunt tempor\",\n \"last_name\": \"in sunt\",\n \"middle_name\": \"velit commodo eiusmod Ut\",\n \"role\": 1299218\n}"
+										}
+									]
+								},
+								{
+									"name": "users users delete",
+									"request": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{baseUrl}}/users/users/:id/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												"users",
+												":id",
+												""
+											],
+											"variable": [
+												{
+													"key": "id",
+													"value": "93318353",
+													"description": "(Required) A unique integer value identifying this Пользователь."
+												}
+											]
+										}
+									},
+									"response": [
+										{
+											"name": "Untitled Example",
+											"originalRequest": {
+												"method": "DELETE",
+												"header": [
+													{
+														"description": "Added as a part of security scheme: apikey",
+														"key": "Authorization",
+														"value": "<API Key>"
+													}
+												],
+												"url": {
+													"raw": "{{baseUrl}}/users/users/:id/",
+													"host": [
+														"{{baseUrl}}"
+													],
+													"path": [
+														"users",
+														"users",
+														":id",
+														""
+													],
+													"variable": [
+														{
+															"key": "id"
+														}
+													]
+												}
+											},
+											"status": "No Content",
+											"code": 204,
+											"_postman_previewlanguage": "text",
+											"header": [
+												{
+													"key": "Content-Type",
+													"value": "text/plain"
+												}
+											],
+											"cookie": [],
+											"body": ""
+										}
+									]
+								}
+							]
+						},
+						{
+							"name": "users users create",
+							"request": {
+								"method": "POST",
+								"header": [
+									{
+										"key": "Content-Type",
+										"value": "application/json"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"password\": \"adipisicing nisi dolore irure\",\n    \"iin\": \"sit proi\",\n    \"phone\": \"minim cupidatat sed magna\",\n    \"email\": \"NTgxCDU@kJdOnCUpGFIwBbFIVXhB.uat\",\n    \"first_name\": \"amet sunt tempor\",\n    \"last_name\": \"in sunt\",\n    \"middle_name\": \"velit commodo eiusmod Ut\",\n    \"role\": 1299218\n}"
+								},
+								"url": {
+									"raw": "{{baseUrl}}/users/users/",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										"users",
+										""
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Untitled Example",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"description": "Added as a part of security scheme: apikey",
+												"key": "Authorization",
+												"value": "<API Key>"
+											}
+										],
+										"url": {
+											"raw": "{{baseUrl}}/users/users/",
+											"host": [
+												"{{baseUrl}}"
+											],
+											"path": [
+												"users",
+												"users",
+												""
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Content-Type",
+											"value": "application/json"
+										}
+									],
+									"cookie": [],
+									"body": "{\n \"password\": \"adipisicing nisi dolore irure\",\n \"iin\": \"sit proi\",\n \"phone\": \"minim cupidatat sed magna\",\n \"email\": \"NTgxCDU@kJdOnCUpGFIwBbFIVXhB.uat\",\n \"first_name\": \"amet sunt tempor\",\n \"last_name\": \"in sunt\",\n \"middle_name\": \"velit commodo eiusmod Ut\",\n \"role\": 1299218\n}"
+								}
+							]
+						}
+					]
+				},
+				{
+					"name": "users list list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users/list/?limit=93318353&offset=93318353",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"list",
+								""
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "93318353",
+									"description": "Number of results to return per page."
+								},
+								{
+									"key": "offset",
+									"value": "93318353",
+									"description": "The initial index from which to return the results."
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "Authorization",
+										"value": "<API Key>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/users/list/?limit=93318353&offset=93318353",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										"list",
+										""
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "93318353"
+										},
+										{
+											"key": "offset",
+											"value": "93318353"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"count\": -35978286,\n \"results\": [\n  {\n   \"password\": \"adipisicing Excepteur irure\",\n   \"iin\": \"incid\",\n   \"phone\": \"reprehenderit eiusmod\",\n   \"email\": \"BU65mC5a@nGC.vkfs\",\n   \"first_name\": \"enim magna dolor Ut\",\n   \"last_name\": \"commodo\",\n   \"middle_name\": \"dolore mollit cillum et ad\",\n   \"role\": 72008320\n  },\n  {\n   \"password\": \"in sunt labore ad\",\n   \"iin\": \"pariatur \",\n   \"phone\": \"dolore velit id laboris\",\n   \"email\": \"lqNOZRjubTviER@dYyL.xtpu\",\n   \"first_name\": \"sunt magna commodo\",\n   \"last_name\": \"labore cupidatat\",\n   \"middle_name\": \"sint et culpa anim in\",\n   \"role\": -16718278\n  }\n ],\n \"next\": \"https://qkcxmrolbWkaUTdFSzsrPaKoQhlJxrf.gmrS,NJN3,Xf6qZEl52S9AUfXYPPDEOu,cG8pjSbP\",\n \"previous\": \"http://oqeo.fzXeyLWogd4AOB9elXRAFMSHVzjFbKx5JJBevEpF5xYtu8Rd3DOmQ6turCuiSRKdP9cf\"\n}"
+						}
+					]
+				},
+				{
+					"name": "users roles list",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{baseUrl}}/users/roles/?limit=93318353&offset=93318353",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"users",
+								"roles",
+								""
+							],
+							"query": [
+								{
+									"key": "limit",
+									"value": "93318353",
+									"description": "Number of results to return per page."
+								},
+								{
+									"key": "offset",
+									"value": "93318353",
+									"description": "The initial index from which to return the results."
+								}
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "Untitled Example",
+							"originalRequest": {
+								"method": "GET",
+								"header": [
+									{
+										"description": "Added as a part of security scheme: apikey",
+										"key": "Authorization",
+										"value": "<API Key>"
+									}
+								],
+								"url": {
+									"raw": "{{baseUrl}}/users/roles/?limit=93318353&offset=93318353",
+									"host": [
+										"{{baseUrl}}"
+									],
+									"path": [
+										"users",
+										"roles",
+										""
+									],
+									"query": [
+										{
+											"key": "limit",
+											"value": "93318353"
+										},
+										{
+											"key": "offset",
+											"value": "93318353"
+										}
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Content-Type",
+									"value": "application/json"
+								}
+							],
+							"cookie": [],
+							"body": "{\n \"count\": -52183215,\n \"results\": [\n  {\n   \"name\": \"OWNER\",\n   \"id\": 63563720\n  },\n  {\n   \"name\": \"OWNER\",\n   \"id\": 20248543\n  }\n ],\n \"next\": \"https://kvuyhoi.hfwa.u8qtDn9SLUfP2nnxI7TLyVPEMixRCCFO6U1uZN2QmhOq+yiF4Pvq6t\",\n \"previous\": \"http://YlAUjtMUfENBMhhFEVcMDRXn.zbkgmZzV72GhU1HKfzq9ZhQzw6Q+CeamJXwUSo4,HS1LKrlqvACvDgC8qUb\"\n}"
+						}
+					]
+				}
+			]
+		},
+		{
+			"name": "restaurant organization create",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"laborum\",\n    \"address\": \"aute eu in culpa\",\n    \"description\": \"ut officia nisi\"\n}"
+				},
+				"url": {
+					"raw": "{{baseUrl}}/restaurant/organization/",
+					"host": [
+						"{{baseUrl}}"
+					],
+					"path": [
+						"restaurant",
+						"organization",
+						""
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Untitled Example",
+					"originalRequest": {
+						"method": "POST",
+						"header": [
+							{
+								"description": "Added as a part of security scheme: apikey",
+								"key": "Authorization",
+								"value": "<API Key>"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\": \"laborum\",\n    \"address\": \"aute eu in culpa\",\n    \"description\": \"ut officia nisi\"\n}"
+						},
+						"url": {
+							"raw": "{{baseUrl}}/restaurant/organization/",
+							"host": [
+								"{{baseUrl}}"
+							],
+							"path": [
+								"restaurant",
+								"organization",
+								""
+							]
+						}
+					},
+					"status": "Created",
+					"code": 201,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "Content-Type",
+							"value": "application/json"
+						}
+					],
+					"cookie": [],
+					"body": "{\n \"name\": \"laborum\",\n \"address\": \"aute eu in culpa\",\n \"description\": \"ut officia nisi\"\n}"
+				}
+			]
+		}
+	],
+	"auth": {
+		"type": "apikey",
+		"apikey": [
+			{
+				"key": "key",
+				"value": "Authorization",
+				"type": "string"
+			},
+			{
+				"key": "value",
+				"value": true,
+				"type": "boolean"
+			},
+			{
+				"key": "in",
+				"value": "header",
+				"type": "string"
+			}
+		]
+	},
+	"variable": [
+		{
+			"key": "baseUrl",
+			"value": "http://127.0.0.1:8000/api",
+			"type": "string"
+		}
+	]
+}
