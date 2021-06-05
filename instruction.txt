@@ -78,3 +78,51 @@ curl http://192.168.49.2:30018
 608  kubectl exec --stdin --tty imenu-deployment-6869548f4-8ghxb   -- /bin/bash
 609  git status
 610  history
+628  kubectl delete -f yaml/secret.yaml -f yaml/postgres.yaml -f yaml/deployement.yaml -f yaml/service.yaml
+629  docker build -t imenu:v1 .
+630  kubectl apply -f yaml/secret.yaml -f yaml/postgres.yaml -f yaml/deployement.yaml -f yaml/service.yaml
+631  minikube service imenu-service --url
+632  minikube ssh
+633  minikube tunnel
+634  kubectl delete -f yaml/secret.yaml -f yaml/postgres.yaml -f yaml/deployement.yaml -f yaml/service.yaml
+635  kubectl apply -f yaml/secret.yaml -f yaml/postgres.yaml -f yaml/deployement.yaml -f yaml/service.yaml
+636  minikube service imenu-service --url
+637  minikube service imenu-service
+638  minikube service imenu-service --url
+639  kubectl delete -f yaml/secret.yaml -f yaml/postgres.yaml -f yaml/deployement.yaml -f yaml/service.yaml
+640  history | grep base64
+641  echo -n "imenudb" | base64
+642  nano requirements.txt
+643  nano reamdme
+644  helm create imenu-chart
+645  helm install imenu ./imenu-chart --dry-run
+646  eval ${minikube docker-env}
+647  eval $(minikube docker-env)
+648  helm install imenu ./imenu-chart --dry-run
+649  helm install imenu ./imenu-chart --dry-run\
+650  helm install imenu ./imenu-chart --dry-run
+651  kubectl delete -f yaml/secret.yaml -f yaml/postgres.yaml -f yaml/deployement.yaml -f yaml/service.yaml
+652  helm install imenu ./imenu-chart --dry-run
+653  helm install imenu ./imenu-chart
+654  helm install imenu ./imenu-chart --dry-run
+655  helm install imenu ./imenu-chart
+656  helm install --replace imenu ./imenu-chart
+657  eval $(minikube docker-env)
+658  docker build -t imenu:v1 .
+659  helm install --replace imenu ./imenu-chart
+660  helm upgrade imenu ./imenu-chart
+661  helm
+662  helm uninstall --replace imenu ./imenu-chart
+663  helm uninstall  imenu ./imenu-chart
+664  helm uninstall imenu ./imenu-chart
+665  helm install --replace imenu ./imenu-chart
+666  kubectl get pods
+667  kubectl logs -f imenu-imenu-chart-7d59f9bdf4-qnbqn
+668  kubectl logs -f imenu-imenu-chart-7d59f9bdf4-qnbqn -c init
+669  kubectl describe pod imenu-imenu-chart-7d59f9bdf4-qnbqn -c init
+670  kubectl describe pod imenu-imenu-chart-7d59f9bdf4-qnbqn
+671  kubectl logs imenu-imenu-chart-7d59f9bdf4-qnbqn
+672  helm uninstall imenu ./imenu-chart
+673  helm install --replace imenu ./imenu-chart
+674  git status
+675  history

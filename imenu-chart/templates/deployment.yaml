@@ -1,37 +1,42 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: imenu-deployment
+  name: {{ include "imenu-chart.fullname" . }}
+  labels:
+    {{- include "imenu-chart.labels" . | nindent 4 }}
 spec:
-  replicas: 2
+  replicas: {{ .Values.replicaCount }}
   selector:
     matchLabels:
-      app: imenu-py-app
+      {{- include "imenu-chart.selectorLabels" . | nindent 6 }}
   template:
     metadata:
+      annotations:
+        checksum/config: {{include (print $.Template.BasePath "/config.yaml") . | sha256sum }}
       labels:
-        app: imenu-py-app
+        {{- include "imenu-chart.selectorLabels" . | nindent 8 }}
     spec:
       containers:
-        - name: imenu
-          image: imenu:v1
+        - name: {{ .Chart.Name }}
+          image: "{{ .Values.image }}"
           command: [ '/bin/bash', 'docker-entrypoint.sh' ]
+          ports:
+            - name: http
+              containerPort: 80
+              protocol: TCP
           env:
             - name: DB_NAME
               value: "imenu_db"
-
             - name: DB_USER
               valueFrom:
                 secretKeyRef:
                   name: postgres-credentials
                   key: user
-
             - name: DB_PASSWORD
               valueFrom:
                 secretKeyRef:
                   name: postgres-credentials
                   key: password
-
             - name: DB_HOST
               value: "postgres"
             - name: DB_PORT
@@ -41,15 +46,3 @@ spec:
                 configMapKeyRef:
                   name: imenu-config
                   key: DEBUG
-
-          ports:
-            - name: web
-              containerPort: 80
-          livenessProbe:
-            httpGet:
-              path: /swagger
-              port: 80
-              scheme: HTTP
-            initialDelaySeconds: 5
-            timeoutSeconds: 1
-

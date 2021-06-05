@@ -22,5 +22,6 @@ class UserCreateApiView(mixins.CreateModelMixin,
 
 
 class RolesListView(generics.ListAPIView):
+    permission_classes = (AllowAny,)
     queryset = Role.objects.all()
     serializer_class = RoleSerializer

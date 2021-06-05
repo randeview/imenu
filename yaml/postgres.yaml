@@ -35,11 +35,20 @@ spec:
           name: postgresdb
         env:
           - name: POSTGRES_DB
-            value: imenu_db
+            valueFrom:
+              secretKeyRef:
+                name: postgres-credentials
+                key: dbname
           - name: POSTGRES_USER
-            value: nurlan
+              valueFrom:
+              secretKeyRef:
+                name: postgres-credentials
+                key: user
           - name: POSTGRES_PASSWORD
-            value: admin
+            valueFrom:
+              secretKeyRef:
+                name: postgres-credentials
+                key: user
         volumeMounts:
         - name: postgresdb
           mountPath: /var/lib/postgresql/data
