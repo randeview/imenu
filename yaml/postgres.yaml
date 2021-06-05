@@ -28,37 +28,37 @@ spec:
         app: postgres
     spec:
       containers:
-      - name: postgres
-        image: postgres:latest
-        ports:
-        - containerPort: 5432
-          name: postgresdb
-        env:
-          - name: POSTGRES_DB
-            valueFrom:
-              secretKeyRef:
-                name: postgres-credentials
-                key: dbname
-          - name: POSTGRES_USER
+        - name: postgres
+          image: postgres:latest
+          ports:
+            - containerPort: 5432
+              name: postgresdb
+          env:
+            - name: POSTGRES_DB
               valueFrom:
-              secretKeyRef:
-                name: postgres-credentials
-                key: user
-          - name: POSTGRES_PASSWORD
-            valueFrom:
-              secretKeyRef:
-                name: postgres-credentials
-                key: user
-        volumeMounts:
-        - name: postgresdb
-          mountPath: /var/lib/postgresql/data
-          subPath: postgres
+                secretKeyRef:
+                  name: postgres-credentials
+                  key: dbname
+            - name: POSTGRES_USER
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-credentials
+                  key: user
+            - name: POSTGRES_PASSWORD
+              valueFrom:
+                secretKeyRef:
+                  name: postgres-credentials
+                  key: user
+          volumeMounts:
+            - name: postgresdb
+              mountPath: /var/lib/postgresql/data
+              subPath: postgres
   volumeClaimTemplates:
-  - metadata:
-      name: postgresdb
-    spec:
-      accessModes: [ "ReadWriteOnce" ]
-      storageClassName: standard
-      resources:
-        requests:
-          storage: 1Gi
+    - metadata:
+        name: postgresdb
+      spec:
+        accessModes: [ "ReadWriteOnce" ]
+        storageClassName: standard
+        resources:
+          requests:
+            storage: 1Gi
